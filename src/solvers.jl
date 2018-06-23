@@ -254,6 +254,7 @@ function solve(m::Model; suppress_warnings=false,
             # Don't corrupt the answers if one of the above two calls fails
             m.objVal = objVal
             m.colVal = colVal
+        catch
         end
     end
 

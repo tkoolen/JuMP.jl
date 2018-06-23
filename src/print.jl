@@ -181,7 +181,7 @@ function model_str(mode, m::Model, sym::PrintSymbols)
                       (m.objSense == :Max ? "Max" : "Min")
     str = obj_sense * sep
     if nlp !== nothing && nlp.nlobj !== nothing
-        str *= (qobj_str=="0"?"":"$qobj_str + ") * expr_str(m, mode, nlp.nlobj)
+        str *= (qobj_str=="0" ? "" : "$qobj_str + ") * expr_str(m, mode, nlp.nlobj)
     else
         str *= qobj_str
     end
